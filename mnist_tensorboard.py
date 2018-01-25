@@ -116,8 +116,6 @@ def train():
     with tf.name_scope('accuracy'):
       accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
   tf.summary.scalar('accuracy', accuracy)
-  tf.summary.histogram('predict', tf.argmax(y, 1))
-  tf.summary.histogram('verdade', tf.argmax(y_, 1))
 
   # Merge all the summaries and write them out to
   # /tmp/tensorflow/mnist/logs/mnist_with_summaries (by default)
